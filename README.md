@@ -1,8 +1,8 @@
 # Google Places Picker
 Highly customizable Place Picker which is based on Google Places API and Google Geocode services.
 
-![Picker][images/picker.png]
-![Picker][images/picker2.png]
+![](https://github.com/piotrbernad/GooglePlacesPicker/blob/master/images/picker.png?raw=true)
+![](https://github.com/piotrbernad/GooglePlacesPicker/blob/master/images/picker2.png?raw=true)
 
 Picker allows user to select the location directly on the map or use search with autocompletion. As a result it provides `GMSPlace` object.
 
