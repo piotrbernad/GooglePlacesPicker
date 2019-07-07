@@ -16,8 +16,30 @@
 		2465877922CE6C4200F17A44 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877422CE6C4200F17A44 /* GoogleMaps.framework */; };
 		2465877A22CE6C4300F17A44 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877522CE6C4200F17A44 /* GoogleMapsCore.framework */; };
 		2465877B22CE6C4300F17A44 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877622CE6C4200F17A44 /* GooglePlaces.framework */; };
-		2465877C22CE6C4300F17A44 /* GoogleMapsM4B.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877722CE6C4200F17A44 /* GoogleMapsM4B.framework */; };
 		2465877D22CE6C4300F17A44 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877822CE6C4200F17A44 /* GoogleMapsBase.framework */; };
+		2465878D22CE6DEF00F17A44 /* PlacePicker_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */; };
+		2465879422CE6DEF00F17A44 /* PlacePicker_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465879322CE6DEF00F17A44 /* PlacePicker_iOSTests.swift */; };
+		2465879622CE6DEF00F17A44 /* PlacePicker_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 2465878622CE6DEF00F17A44 /* PlacePicker_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2465879922CE6DEF00F17A44 /* PlacePicker_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */; };
+		2465879A22CE6DEF00F17A44 /* PlacePicker_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		246587A322CE6E1100F17A44 /* PlacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246587A222CE6E1100F17A44 /* PlacePicker.swift */; };
+		246587A422CF28D900F17A44 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877422CE6C4200F17A44 /* GoogleMaps.framework */; };
+		246587A522CF28D900F17A44 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877822CE6C4200F17A44 /* GoogleMapsBase.framework */; };
+		246587A622CF28D900F17A44 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877522CE6C4200F17A44 /* GoogleMapsCore.framework */; };
+		246587A722CF28D900F17A44 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877622CE6C4200F17A44 /* GooglePlaces.framework */; };
+		246587A922CF490B00F17A44 /* PlacePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246587A822CF490B00F17A44 /* PlacePickerView.swift */; };
+		246587AB22CF499800F17A44 /* PlacePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246587AA22CF499800F17A44 /* PlacePickerController.swift */; };
+		246587AD22CF49BB00F17A44 /* PlacePickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246587AC22CF49BB00F17A44 /* PlacePickerConfig.swift */; };
+		24BC234522D1C41900AE02B9 /* DefaultPlacesListRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234422D1C41900AE02B9 /* DefaultPlacesListRenderer.swift */; };
+		24BC234722D1F1F700AE02B9 /* PlacesPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234622D1F1F700AE02B9 /* PlacesPickerDelegate.swift */; };
+		24BC234922D1F2B400AE02B9 /* PlacesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234822D1F2B400AE02B9 /* PlacesError.swift */; };
+		24BC234B22D1F2F100AE02B9 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234A22D1F2F100AE02B9 /* ListState.swift */; };
+		24BC234D22D1F30E00AE02B9 /* PlacesListObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */; };
+		24BC234F22D1F49000AE02B9 /* PlacesListRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */; };
+		24BC235122D1FE5E00AE02B9 /* PickerRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */; };
+		24BC235422D2187700AE02B9 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC235222D2161400AE02B9 /* Geocoder.swift */; };
+		24BC235622D22D3200AE02B9 /* ReverseGeocodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */; };
+		24BC2BFC22CF739B00467F56 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +50,42 @@
 			remoteGlobalIDString = 242FBBFD22CCC01C001C6789;
 			remoteInfo = PlacesPicker;
 		};
+		2465878E22CE6DEF00F17A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 242FBBF622CCC01C001C6789 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2465878322CE6DEF00F17A44;
+			remoteInfo = "PlacePicker-iOS";
+		};
+		2465879022CE6DEF00F17A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 242FBBF622CCC01C001C6789 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242FBBFD22CCC01C001C6789;
+			remoteInfo = PlacesPicker;
+		};
+		2465879722CE6DEF00F17A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 242FBBF622CCC01C001C6789 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2465878322CE6DEF00F17A44;
+			remoteInfo = "PlacePicker-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2465879E22CE6DEF00F17A44 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2465879A22CE6DEF00F17A44 /* PlacePicker_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		242FBBFE22CCC01C001C6789 /* PlacesPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +101,27 @@
 		2465877422CE6C4200F17A44 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Carthage/Build/iOS/GoogleMaps.framework; sourceTree = SOURCE_ROOT; };
 		2465877522CE6C4200F17A44 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Carthage/Build/iOS/GoogleMapsCore.framework; sourceTree = SOURCE_ROOT; };
 		2465877622CE6C4200F17A44 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Carthage/Build/iOS/GooglePlaces.framework; sourceTree = SOURCE_ROOT; };
-		2465877722CE6C4200F17A44 /* GoogleMapsM4B.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsM4B.framework; path = Carthage/Build/iOS/GoogleMapsM4B.framework; sourceTree = SOURCE_ROOT; };
 		2465877822CE6C4200F17A44 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Carthage/Build/iOS/GoogleMapsBase.framework; sourceTree = SOURCE_ROOT; };
+		2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlacePicker_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2465878622CE6DEF00F17A44 /* PlacePicker_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlacePicker_iOS.h; sourceTree = "<group>"; };
+		2465878722CE6DEF00F17A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2465878C22CE6DEF00F17A44 /* PlacePicker-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlacePicker-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2465879322CE6DEF00F17A44 /* PlacePicker_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePicker_iOSTests.swift; sourceTree = "<group>"; };
+		2465879522CE6DEF00F17A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		246587A222CE6E1100F17A44 /* PlacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePicker.swift; sourceTree = "<group>"; };
+		246587A822CF490B00F17A44 /* PlacePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerView.swift; sourceTree = "<group>"; };
+		246587AA22CF499800F17A44 /* PlacePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerController.swift; sourceTree = "<group>"; };
+		246587AC22CF49BB00F17A44 /* PlacePickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerConfig.swift; sourceTree = "<group>"; };
+		24BC234422D1C41900AE02B9 /* DefaultPlacesListRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlacesListRenderer.swift; sourceTree = "<group>"; };
+		24BC234622D1F1F700AE02B9 /* PlacesPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesPickerDelegate.swift; sourceTree = "<group>"; };
+		24BC234822D1F2B400AE02B9 /* PlacesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesError.swift; sourceTree = "<group>"; };
+		24BC234A22D1F2F100AE02B9 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
+		24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListObjectType.swift; sourceTree = "<group>"; };
+		24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListRenderer.swift; sourceTree = "<group>"; };
+		24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRenderer.swift; sourceTree = "<group>"; };
+		24BC235222D2161400AE02B9 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodeResponse.swift; sourceTree = "<group>"; };
+		24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2465877D22CE6C4300F17A44 /* GoogleMapsBase.framework in Frameworks */,
-				2465877C22CE6C4300F17A44 /* GoogleMapsM4B.framework in Frameworks */,
 				2465877B22CE6C4300F17A44 /* GooglePlaces.framework in Frameworks */,
 				2465877922CE6C4200F17A44 /* GoogleMaps.framework in Frameworks */,
+				2465879922CE6DEF00F17A44 /* PlacePicker_iOS.framework in Frameworks */,
 				2465877A22CE6C4300F17A44 /* GoogleMapsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +144,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2465878122CE6DEF00F17A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246587A422CF28D900F17A44 /* GoogleMaps.framework in Frameworks */,
+				246587A622CF28D900F17A44 /* GoogleMapsCore.framework in Frameworks */,
+				246587A522CF28D900F17A44 /* GoogleMapsBase.framework in Frameworks */,
+				246587A722CF28D900F17A44 /* GooglePlaces.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2465878922CE6DEF00F17A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2465878D22CE6DEF00F17A44 /* PlacePicker_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				242FBC0022CCC01C001C6789 /* PlacesPicker */,
+				2465878522CE6DEF00F17A44 /* PlacePicker-iOS */,
+				2465879222CE6DEF00F17A44 /* PlacePicker-iOSTests */,
 				2465877322CE6C2400F17A44 /* Frameworks */,
 				242FBC1522CCC01E001C6789 /* PlacesPickerTests */,
 				242FBBFF22CCC01C001C6789 /* Products */,
@@ -86,6 +183,8 @@
 			children = (
 				242FBBFE22CCC01C001C6789 /* PlacesPicker.app */,
 				242FBC1222CCC01E001C6789 /* PlacesPickerTests.xctest */,
+				2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */,
+				2465878C22CE6DEF00F17A44 /* PlacePicker-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +192,7 @@
 		242FBC0022CCC01C001C6789 /* PlacesPicker */ = {
 			isa = PBXGroup;
 			children = (
+				2465877E22CE6D0F00F17A44 /* Classes */,
 				242FBC0122CCC01C001C6789 /* AppDelegate.swift */,
 				242FBC0322CCC01C001C6789 /* ViewController.swift */,
 				242FBC0522CCC01C001C6789 /* Main.storyboard */,
@@ -118,13 +218,62 @@
 				2465877422CE6C4200F17A44 /* GoogleMaps.framework */,
 				2465877822CE6C4200F17A44 /* GoogleMapsBase.framework */,
 				2465877522CE6C4200F17A44 /* GoogleMapsCore.framework */,
-				2465877722CE6C4200F17A44 /* GoogleMapsM4B.framework */,
 				2465877622CE6C4200F17A44 /* GooglePlaces.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		2465877E22CE6D0F00F17A44 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				246587A222CE6E1100F17A44 /* PlacePicker.swift */,
+				246587A822CF490B00F17A44 /* PlacePickerView.swift */,
+				246587AA22CF499800F17A44 /* PlacePickerController.swift */,
+				24BC234622D1F1F700AE02B9 /* PlacesPickerDelegate.swift */,
+				246587AC22CF49BB00F17A44 /* PlacePickerConfig.swift */,
+				24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */,
+				24BC234A22D1F2F100AE02B9 /* ListState.swift */,
+				24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */,
+				24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */,
+				24BC234822D1F2B400AE02B9 /* PlacesError.swift */,
+				24BC234422D1C41900AE02B9 /* DefaultPlacesListRenderer.swift */,
+				24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */,
+				24BC235222D2161400AE02B9 /* Geocoder.swift */,
+				24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2465878522CE6DEF00F17A44 /* PlacePicker-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2465878622CE6DEF00F17A44 /* PlacePicker_iOS.h */,
+				2465878722CE6DEF00F17A44 /* Info.plist */,
+			);
+			path = "PlacePicker-iOS";
+			sourceTree = "<group>";
+		};
+		2465879222CE6DEF00F17A44 /* PlacePicker-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				2465879322CE6DEF00F17A44 /* PlacePicker_iOSTests.swift */,
+				2465879522CE6DEF00F17A44 /* Info.plist */,
+			);
+			path = "PlacePicker-iOSTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2465877F22CE6DEF00F17A44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2465879622CE6DEF00F17A44 /* PlacePicker_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		242FBBFD22CCC01C001C6789 /* PlacesPicker */ = {
@@ -135,10 +284,12 @@
 				242FBBFB22CCC01C001C6789 /* Frameworks */,
 				242FBBFC22CCC01C001C6789 /* Resources */,
 				2465877222CE6B6F00F17A44 /* Carthage */,
+				2465879E22CE6DEF00F17A44 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2465879822CE6DEF00F17A44 /* PBXTargetDependency */,
 			);
 			name = PlacesPicker;
 			productName = PlacesPicker;
@@ -163,6 +314,43 @@
 			productReference = 242FBC1222CCC01E001C6789 /* PlacesPickerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2465878322CE6DEF00F17A44 /* PlacePicker-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2465879B22CE6DEF00F17A44 /* Build configuration list for PBXNativeTarget "PlacePicker-iOS" */;
+			buildPhases = (
+				2465877F22CE6DEF00F17A44 /* Headers */,
+				2465878022CE6DEF00F17A44 /* Sources */,
+				2465878122CE6DEF00F17A44 /* Frameworks */,
+				2465878222CE6DEF00F17A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PlacePicker-iOS";
+			productName = "PlacePicker-iOS";
+			productReference = 2465878422CE6DEF00F17A44 /* PlacePicker_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2465878B22CE6DEF00F17A44 /* PlacePicker-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2465879F22CE6DEF00F17A44 /* Build configuration list for PBXNativeTarget "PlacePicker-iOSTests" */;
+			buildPhases = (
+				2465878822CE6DEF00F17A44 /* Sources */,
+				2465878922CE6DEF00F17A44 /* Frameworks */,
+				2465878A22CE6DEF00F17A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2465878F22CE6DEF00F17A44 /* PBXTargetDependency */,
+				2465879122CE6DEF00F17A44 /* PBXTargetDependency */,
+			);
+			name = "PlacePicker-iOSTests";
+			productName = "PlacePicker-iOSTests";
+			productReference = 2465878C22CE6DEF00F17A44 /* PlacePicker-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +365,14 @@
 						CreatedOnToolsVersion = 10.2.1;
 					};
 					242FBC1122CCC01E001C6789 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 242FBBFD22CCC01C001C6789;
+					};
+					2465878322CE6DEF00F17A44 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					2465878B22CE6DEF00F17A44 = {
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = 242FBBFD22CCC01C001C6789;
 					};
@@ -197,6 +393,8 @@
 			targets = (
 				242FBBFD22CCC01C001C6789 /* PlacesPicker */,
 				242FBC1122CCC01E001C6789 /* PlacesPickerTests */,
+				2465878322CE6DEF00F17A44 /* PlacePicker-iOS */,
+				2465878B22CE6DEF00F17A44 /* PlacePicker-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +411,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		242FBC1022CCC01E001C6789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2465878222CE6DEF00F17A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2465878A22CE6DEF00F17A44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,6 +480,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2465878022CE6DEF00F17A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24BC234D22D1F30E00AE02B9 /* PlacesListObjectType.swift in Sources */,
+				246587A922CF490B00F17A44 /* PlacePickerView.swift in Sources */,
+				246587A322CE6E1100F17A44 /* PlacePicker.swift in Sources */,
+				24BC234F22D1F49000AE02B9 /* PlacesListRenderer.swift in Sources */,
+				24BC234B22D1F2F100AE02B9 /* ListState.swift in Sources */,
+				24BC234522D1C41900AE02B9 /* DefaultPlacesListRenderer.swift in Sources */,
+				24BC2BFC22CF739B00467F56 /* PlacesDataSource.swift in Sources */,
+				246587AB22CF499800F17A44 /* PlacePickerController.swift in Sources */,
+				24BC235122D1FE5E00AE02B9 /* PickerRenderer.swift in Sources */,
+				24BC235422D2187700AE02B9 /* Geocoder.swift in Sources */,
+				24BC234722D1F1F700AE02B9 /* PlacesPickerDelegate.swift in Sources */,
+				24BC234922D1F2B400AE02B9 /* PlacesError.swift in Sources */,
+				24BC235622D22D3200AE02B9 /* ReverseGeocodeResponse.swift in Sources */,
+				246587AD22CF49BB00F17A44 /* PlacePickerConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2465878822CE6DEF00F17A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2465879422CE6DEF00F17A44 /* PlacePicker_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -275,6 +516,21 @@
 			isa = PBXTargetDependency;
 			target = 242FBBFD22CCC01C001C6789 /* PlacesPicker */;
 			targetProxy = 242FBC1322CCC01E001C6789 /* PBXContainerItemProxy */;
+		};
+		2465878F22CE6DEF00F17A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2465878322CE6DEF00F17A44 /* PlacePicker-iOS */;
+			targetProxy = 2465878E22CE6DEF00F17A44 /* PBXContainerItemProxy */;
+		};
+		2465879122CE6DEF00F17A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242FBBFD22CCC01C001C6789 /* PlacesPicker */;
+			targetProxy = 2465879022CE6DEF00F17A44 /* PBXContainerItemProxy */;
+		};
+		2465879822CE6DEF00F17A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2465878322CE6DEF00F17A44 /* PlacePicker-iOS */;
+			targetProxy = 2465879722CE6DEF00F17A44 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,6 +673,7 @@
 		242FBC1C22CCC01E001C6789 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6WRHQXQE9;
@@ -439,6 +696,7 @@
 		242FBC1D22CCC01E001C6789 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6WRHQXQE9;
@@ -500,6 +758,113 @@
 			};
 			name = Release;
 		};
+		2465879C22CE6DEF00F17A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "PlacePicker-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrbernad.placepicker.PlacePicker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2465879D22CE6DEF00F17A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "PlacePicker-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrbernad.placepicker.PlacePicker-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		246587A022CE6DEF00F17A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				INFOPLIST_FILE = "PlacePicker-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrbernad.placepicker.PlacePicker-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlacesPicker.app/PlacesPicker";
+			};
+			name = Debug;
+		};
+		246587A122CE6DEF00F17A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				INFOPLIST_FILE = "PlacePicker-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piotrbernad.placepicker.PlacePicker-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlacesPicker.app/PlacesPicker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +891,24 @@
 			buildConfigurations = (
 				242FBC1F22CCC01E001C6789 /* Debug */,
 				242FBC2022CCC01E001C6789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2465879B22CE6DEF00F17A44 /* Build configuration list for PBXNativeTarget "PlacePicker-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2465879C22CE6DEF00F17A44 /* Debug */,
+				2465879D22CE6DEF00F17A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2465879F22CE6DEF00F17A44 /* Build configuration list for PBXNativeTarget "PlacePicker-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				246587A022CE6DEF00F17A44 /* Debug */,
+				246587A122CE6DEF00F17A44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
