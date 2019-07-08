@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2465878322CE6DEF00F17A44"
-               BuildableName = "PlacePicker_iOS.framework"
+               BuildableName = "PlacePicker.framework"
                BlueprintName = "PlacePicker-iOS"
                ReferencedContainer = "container:PlacesPicker.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2465878322CE6DEF00F17A44"
-            BuildableName = "PlacePicker_iOS.framework"
+            BuildableName = "PlacePicker.framework"
             BlueprintName = "PlacePicker-iOS"
             ReferencedContainer = "container:PlacesPicker.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2465878322CE6DEF00F17A44"
-            BuildableName = "PlacePicker_iOS.framework"
+            BuildableName = "PlacePicker.framework"
             BlueprintName = "PlacePicker-iOS"
             ReferencedContainer = "container:PlacesPicker.xcodeproj">
          </BuildableReference>
