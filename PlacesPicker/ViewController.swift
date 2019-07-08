@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PlacePicker_iOS
+import PlacePicker
 import GooglePlaces
 
 class ViewController: UIViewController {

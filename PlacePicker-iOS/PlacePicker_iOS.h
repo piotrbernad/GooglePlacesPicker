@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for PlacePicker_iOS.
-FOUNDATION_EXPORT double PlacePicker_iOSVersionNumber;
+//! Project version number for PlacePicker.
+FOUNDATION_EXPORT double PlacePickerVersionNumber;
 
 //! Project version string for PlacePicker_iOS.
-FOUNDATION_EXPORT const unsigned char PlacePicker_iOSVersionString[];
+FOUNDATION_EXPORT const unsigned char PlacePickerVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <PlacePicker_iOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <PlacePicker/PublicHeader.h>
 
 

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import PlacePicker_iOS
+@testable import PlacePicker
 
 class PlacePicker_iOSTests: XCTestCase {
 

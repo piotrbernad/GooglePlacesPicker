@@ -6,7 +6,7 @@
 //  Copyright © 2019 Piotr Bernad. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class DefaultPlacesListRenderer: PlacesListRenderer {
     public init() {}
