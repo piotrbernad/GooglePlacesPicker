@@ -8,7 +8,13 @@ Picker allows user to select the location directly on the map or use search with
 
 # Installation
 
-todo
+![](https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat)
+
+Add following line to your Cartfile:
+```github "piotrbernad/GooglePlacesPicker"```
+
+Import module using:
+```import PlacePicker``
 
 # Usage
 
@@ -63,5 +69,4 @@ Feel free to contribute.
 ## TODO
 
 1. Setup cocoapods
-2. Setup carthage
-3. Write tests
+2. Write tests
