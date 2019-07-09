@@ -132,8 +132,10 @@ extension PlacesDataSource: UITableViewDataSource {
 extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         self.state = .singlePlace(place: place)
-        self.delegate?.autoCompleteControllerDidProvide(place: place)
-        viewController.dismiss(animated: true, completion: nil)
+        
+        viewController.dismiss(animated: true, completion: { [weak self] in
+            self?.delegate?.autoCompleteControllerDidProvide(place: place)
+        })
     }
     
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {

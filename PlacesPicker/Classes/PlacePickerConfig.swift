@@ -14,6 +14,8 @@ public struct PlacePickerConfig {
     public let placeFields: GMSPlaceField
     public let pickerRenderer: PickerRenderer
     public let placesFilter: GMSAutocompleteFilter?
+    public let initialCoordinate: CLLocationCoordinate2D?
+    public let initialZoom: Float
     
     public static var `default`: PlacePickerConfig {
         return PlacePickerConfig()
@@ -22,11 +24,15 @@ public struct PlacePickerConfig {
     public init(listRenderer: PlacesListRenderer = DefaultPlacesListRenderer(),
                 placeFields: GMSPlaceField = GMSPlaceField.defaultFields,
                 placesFilter: GMSAutocompleteFilter? = nil,
-                pickerRenderer: PickerRenderer = DefaultPickerRenderer()) {
+                pickerRenderer: PickerRenderer = DefaultPickerRenderer(),
+                initialCoordinate: CLLocationCoordinate2D? = nil,
+                initialZoom: Float = 13.0) {
         self.listRenderer = listRenderer
         self.placeFields = placeFields
         self.placesFilter = placesFilter
         self.pickerRenderer = pickerRenderer
+        self.initialZoom = initialZoom
+        self.initialCoordinate = initialCoordinate
     }
 }
 

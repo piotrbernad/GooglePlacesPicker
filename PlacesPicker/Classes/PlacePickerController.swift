@@ -29,6 +29,14 @@ public class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setInitialCoordinateIfNeeded()
+    }
+    
+    private func setInitialCoordinateIfNeeded() {
+        if let initialCoordinate = self.config.initialCoordinate {
+            let position = GMSCameraPosition(latitude: initialCoordinate.latitude, longitude: initialCoordinate.longitude, zoom: config.initialZoom)
+            pickerView.mapView.animate(to: position)
+        }
     }
     
     // Internal
