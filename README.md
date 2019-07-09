@@ -14,7 +14,7 @@ Add following line to your Cartfile:
 ```github "piotrbernad/GooglePlacesPicker"```
 
 Import module using:
-```import PlacePicker``
+```import PlacePicker```
 
 # Usage
 
