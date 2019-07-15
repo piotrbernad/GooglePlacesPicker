@@ -15,16 +15,16 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "GooglePlacesPicker"
+  spec.name         = "PlacesPicker"
   spec.version      = "0.0.3"
   spec.summary      = "Highly customizable replacement for deprecated Google Places Picker Controller."
-
+  spec.swift_version   = '5.0'
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = "Highly customizable replacement for deprecated Google Places Picker Controller."
+  spec.description  = "Replacement for deprecated Google Places Picker Controller. Customize the look of the list, map or whole picker view by providing configuration object."
 
   spec.homepage     = "https://github.com/piotrbernad/GooglePlacesPicker"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -37,8 +37,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +90,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "PlacesPicker/Classes", "PlacesPicker/Classes/**/*.{h,m}"
   spec.exclude_files = "Classes/Exclude"
-
+  spec.static_framework = true
   # spec.public_header_files = "Classes/**/*.h"
 
 

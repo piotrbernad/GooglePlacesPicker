@@ -6,9 +6,25 @@ Highly customizable Place Picker which is based on Google Places API and Google 
 
 Picker allows user to select the location directly on the map or use search with autocompletion. As a result it provides `GMSPlace` object.
 
-# Installation
+# Installation via Carthage
 
-todo
+![](https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat)
+
+Add following line to your Cartfile:
+```github "piotrbernad/GooglePlacesPicker"```
+
+Import module using:
+```import PlacePicker```
+
+# Installation via Cocoapods
+
+![](https://cocoapod-badges.herokuapp.com/v/PlacesPicker/badge.png)
+
+Add following line to your Cartfile:
+```pod 'PlacesPicker'```
+
+Import module using:
+```import PlacesPicker```
 
 # Usage
 
@@ -63,5 +79,4 @@ Feel free to contribute.
 ## TODO
 
 1. Setup cocoapods
-2. Setup carthage
-3. Write tests
+2. Write tests
