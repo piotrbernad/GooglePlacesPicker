@@ -16,11 +16,16 @@ protocol PlacesDataSourceDelegate: class {
     func autoCompleteControllerDidProvide(place: GMSPlace)
 }
 
+protocol GeocoderProtocol {
+    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping (ReverseGeocodeResponse?, Error?) -> ())
+}
+
 class PlacesDataSource: NSObject {
     weak var tableView: UITableView?
     weak var delegate: PlacesDataSourceDelegate?
     
-    private let ggeocoder = Geocoder()
+    private let geocoder: GeocoderProtocol
+    private let placesClient: GMSPlacesClient
     private let renderer: PlacesListRenderer
     private var state = ListState.nothingSelected {
         didSet {
@@ -30,7 +35,9 @@ class PlacesDataSource: NSObject {
     
     private var sessionToken: GMSAutocompleteSessionToken!
     
-    init(renderer: PlacesListRenderer) {
+    init(renderer: PlacesListRenderer, geocoder: GeocoderProtocol = Geocoder(), placesClient: GMSPlacesClient = GMSPlacesClient.shared()) {
+        self.geocoder = geocoder
+        self.placesClient = placesClient
         self.renderer = renderer
         self.sessionToken = GMSAutocompleteSessionToken()
         super.init()
@@ -51,7 +58,7 @@ class PlacesDataSource: NSObject {
     }
     
     private func fetchDetailsFromGooglePlaces(placeId: String) {
-        GMSPlacesClient.shared().lookUpPlaceID(placeId) { [weak self] (place, error) in
+        placesClient.lookUpPlaceID(placeId) { [weak self] (place, error) in
             if let error = error {
                 self?.state = .error(error: error)
                 self?.tableView?.reloadData()
@@ -145,3 +152,5 @@ extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
         viewController.dismiss(animated: true, completion: nil)
     }
 }
+
+extension Geocoder: GeocoderProtocol {}
