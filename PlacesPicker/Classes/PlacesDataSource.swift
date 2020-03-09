@@ -20,7 +20,6 @@ class PlacesDataSource: NSObject {
     weak var tableView: UITableView?
     weak var delegate: PlacesDataSourceDelegate?
     
-    private let geocoder = GMSGeocoder()
     private let ggeocoder = Geocoder()
     private let renderer: PlacesListRenderer
     private var state = ListState.nothingSelected {
@@ -69,7 +68,7 @@ class PlacesDataSource: NSObject {
     
     private func reverseGecodeLocation(coordinate: CLLocationCoordinate2D) {
         
-        ggeocoder.reverseGeocode(coordinate: coordinate) { [weak self] (response, error) in
+        geocoder.reverseGeocodeCoordinate(coordinate) { [weak self] (response, error) in
             if let error = error {
                 self?.state = .error(error: error)
                 return
