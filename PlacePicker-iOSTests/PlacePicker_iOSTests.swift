@@ -45,12 +45,15 @@ struct PlacesListRenderer_Mock: PlacesListRenderer {
     }
 }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+class PlacesDataSourceDelegate_Mock: PlacesDataSourceDelegate {
+    var flag: Bool = false
+    
+    func placePickerDidSelectPlace(place: GMSPlace) {
+        flag = true
     }
+    
+    func autoCompleteControllerDidProvide(place: GMSPlace) {}
+}
 extension CLLocationCoordinate2D: Equatable {}
 
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
