@@ -31,4 +31,14 @@ class PlacePicker_iOSTests: XCTestCase {
         }
     }
 
+extension CLLocationCoordinate2D {
+    static var Prague: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076)
+    }
+    
+    static var Bratislava: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: 48.14816, longitude: 17.10674)
+    }
+}
+
 }
