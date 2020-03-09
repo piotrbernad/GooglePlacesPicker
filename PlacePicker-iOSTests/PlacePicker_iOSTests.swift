@@ -106,6 +106,44 @@ class PlacesDataSourceDelegate_Mock: PlacesDataSourceDelegate {
     
     func autoCompleteControllerDidProvide(place: GMSPlace) {}
 }
+
+class GMSPlacesClient_Mock: GMSPlacesClient {
+    override func lookUpPlaceID(_ placeID: String, callback: @escaping GMSPlaceResultCallback) {
+        let place = GMSPlace_Mock(name: "some", placeID: String.PragueNationalMuseum, coordinate: CLLocationCoordinate2D())
+        switch placeID {
+        case String.PragueNationalMuseum:
+            return callback(place, nil)
+        default:
+            return
+        }
+    }
+}
+
+class GMSPlace_Mock: GMSPlace {
+
+    let _name: String
+    let _placeID: String
+    let _coordinate: CLLocationCoordinate2D
+
+    init(name: String, placeID: String, coordinate: CLLocationCoordinate2D) {
+        self._name = name
+        self._placeID = placeID
+        self._coordinate = coordinate
+    }
+
+    override var name: String {
+        return _name
+    }
+
+    override var placeID: String {
+        return _placeID
+    }
+
+    override var coordinate: CLLocationCoordinate2D {
+        return _coordinate
+    }
+
+}
 extension CLLocationCoordinate2D: Equatable {}
 
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
