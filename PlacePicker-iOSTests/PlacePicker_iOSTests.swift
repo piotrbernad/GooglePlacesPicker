@@ -33,10 +33,17 @@ struct GMSGeocoder_Mock: GeocoderProtocol {
     }
 }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+struct PlacesListRenderer_Mock: PlacesListRenderer {
+    func registerCells(tableView: UITableView) {
+        tableView.register(TestCell.self, forCellReuseIdentifier: "test")
     }
+    
+    func cellForRowAt(indexPath: IndexPath, tableView: UITableView, object: PlacesListObjectType) -> UITableViewCell {
+        let cell = TestCell()
+        cell.state = object
+        return cell
+    }
+}
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
@@ -60,4 +67,7 @@ extension CLLocationCoordinate2D {
     }
 }
 
+class TestCell: UITableViewCell {
+    var state: PlacesListObjectType!
+}
 }
