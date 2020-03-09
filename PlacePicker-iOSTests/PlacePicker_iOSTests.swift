@@ -17,10 +17,21 @@ class PlacePicker_iOSTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+class TestError: Error {}
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+struct GMSGeocoder_Mock: GeocoderProtocol {
+    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping (ReverseGeocodeResponse?, Error?) -> ()) {
+        switch coordinate {
+        case .Prague:
+            let response = ReverseGeocodeResponse(results: [ReverseGeocodeResult(formattedAddress: "Some address", placeId: "Some id"), ReverseGeocodeResult(formattedAddress: "Some other address", placeId: "Some id")])
+            return completionHandler(response, nil)
+        case .Bratislava:
+            return completionHandler(ReverseGeocodeResponse(results: []), nil)
+        default:
+            return completionHandler(nil, TestError())
+        }
     }
+}
 
     func testExample() {
         // This is an example of a functional test case.
