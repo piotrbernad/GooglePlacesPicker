@@ -13,13 +13,15 @@ import XCTest
 @testable import PlacePicker
 
 class PlacePicker_iOSTests: XCTestCase {
-
+    
     let renderer_mock = PlacesListRenderer_Mock()
     let geocoder_mock = GMSGeocoder_Mock()
+    let placesClient_mock = GMSPlacesClient_Mock()
     var dataSource_mock: PlacesDataSource!
     var tableView: UITableView!
+    
     override func setUp() {
-        self.dataSource_mock = PlacesDataSource(renderer: renderer_mock, geocoder: geocoder_mock)
+        self.dataSource_mock = PlacesDataSource(renderer: renderer_mock, geocoder: geocoder_mock, placesClient: placesClient_mock)
         self.tableView = UITableView()
         dataSource_mock.tableView = tableView
     }
