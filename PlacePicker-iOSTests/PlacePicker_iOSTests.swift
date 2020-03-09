@@ -71,6 +71,46 @@ class PlacePicker_iOSTests: XCTestCase {
         dataSource_mock.didSelectListItemAt(index: 0)
         XCTAssertEqual(delegate.flag, false)
     }
+    
+    // MARK: tests using real geocoder
+    func testFetchPlacesFor() {
+        let location = CLLocationCoordinate2D(latitude: 50.0706333725773, longitude: 50.0706333725773)
+        let dataSource = PlacesDataSource(renderer: renderer_mock)
+        dataSource.tableView = tableView
+        dataSource.fetchPlacesFor(coordinate: location, bounds: nil)
+        let exp = expectation(description: "Test after 5 seconds")
+        let result = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        if result == XCTWaiter.Result.timedOut {
+            let rows = dataSource.tableView(dataSource.tableView!, numberOfRowsInSection: 0)
+            XCTAssert(rows > 0)
+            if rows > 0 {
+                let cell = dataSource.tableView(dataSource.tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as! TestCell
+                XCTAssert(cell.state.isPlace || cell.state.isAddress)
+            }
+        } else {
+            XCTFail("Delay interrupted")
+        }
+    }
+
+    func testfetchPlaceDetails() {
+        let dataSource = PlacesDataSource(renderer: renderer_mock)
+        dataSource.tableView = tableView
+        dataSource.fetchPlaceDetails(placeId: .PragueNationalMuseum)
+        let exp = expectation(description: "Test after 5 seconds")
+        let result = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        if result == XCTWaiter.Result.timedOut {
+            let rows = dataSource.tableView(dataSource.tableView!, numberOfRowsInSection: 0)
+            XCTAssert(rows > 0)
+            if rows > 0 {
+                let cell = dataSource.tableView(dataSource.tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as! TestCell
+                XCTAssert(cell.state.isPlace || cell.state.isAddress)
+            }
+        } else {
+            XCTFail("Delay interrupted")
+        }
+    }
+}
+
 class TestError: Error {}
 
 struct GMSGeocoder_Mock: GeocoderProtocol {
@@ -146,6 +186,7 @@ class GMSPlace_Mock: GMSPlace {
     }
 
 }
+
 extension CLLocationCoordinate2D: Equatable {}
 
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
@@ -160,6 +201,24 @@ extension CLLocationCoordinate2D {
     static var Bratislava: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: 48.14816, longitude: 17.10674)
     }
+}
+
+extension PlacesListObjectType {
+
+    var isPlace: Bool {
+        if case .place = self {
+            return true
+        }
+        return false
+    }
+
+    var isAddress: Bool {
+        if case .address = self {
+            return true
+        }
+        return false
+    }
+
 }
 
 class TestCell: UITableViewCell {
