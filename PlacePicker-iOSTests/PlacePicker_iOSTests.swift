@@ -23,6 +23,51 @@ class PlacePicker_iOSTests: XCTestCase {
         self.tableView = UITableView()
         dataSource_mock.tableView = tableView
     }
+    
+    func testMockedfetchPlacesFor() {
+        dataSource_mock.fetchPlacesFor(coordinate: .Prague, bounds: nil)
+        let rows = dataSource_mock.tableView(tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rows, 2)
+    }
+    
+    func testDidSelectListItemAtPlace() {
+        let delegate = PlacesDataSourceDelegate_Mock()
+        dataSource_mock.delegate = delegate
+        dataSource_mock.fetchPlaceDetails(placeId: String.PragueNationalMuseum)
+        let rows = dataSource_mock.tableView(tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rows, 1)
+        if rows == 1 {
+            dataSource_mock.didSelectListItemAt(index: 0)
+            XCTAssertEqual(delegate.flag, true)
+        }
+    }
+    
+    func testDidSelectListItemAtAddress() {
+        let delegate = PlacesDataSourceDelegate_Mock()
+        dataSource_mock.delegate = delegate
+        dataSource_mock.fetchPlacesFor(coordinate: .Prague, bounds: nil)
+        let rows = dataSource_mock.tableView(tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rows, 2)
+        if rows == 2 {
+            dataSource_mock.didSelectListItemAt(index: 0)
+            XCTAssertEqual(delegate.flag, true)
+        }
+    }
+    
+    func testDidSelectListItemAtWhenEmpty() {
+        let delegate = PlacesDataSourceDelegate_Mock()
+        dataSource_mock.delegate = delegate
+        dataSource_mock.fetchPlacesFor(coordinate: .Bratislava, bounds: nil)
+        dataSource_mock.didSelectListItemAt(index: 0)
+        XCTAssertEqual(delegate.flag, false)
+    }
+    
+    func testDidSelectListItemAtError() {
+        let delegate = PlacesDataSourceDelegate_Mock()
+        dataSource_mock.delegate = delegate
+        dataSource_mock.fetchPlacesFor(coordinate: CLLocationCoordinate2D(), bounds: nil)
+        dataSource_mock.didSelectListItemAt(index: 0)
+        XCTAssertEqual(delegate.flag, false)
     }
 class TestError: Error {}
 
@@ -80,4 +125,7 @@ extension CLLocationCoordinate2D {
 class TestCell: UITableViewCell {
     var state: PlacesListObjectType!
 }
+
+extension String {
+    static var PragueNationalMuseum: String { return "ChIJua9Ogo2UC0cRpkk9dANajkI" }
 }
