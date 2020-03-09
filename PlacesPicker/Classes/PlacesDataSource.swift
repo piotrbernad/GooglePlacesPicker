@@ -88,6 +88,7 @@ class PlacesDataSource: NSObject {
     private func fetchSublistOrSelectPlace(index: Int) {
         switch state {
         case .adresses(let objects):
+            guard objects.count > index else { return }
             fetchDetailsFor(address: objects[index])
         case .singlePlace(let place):
             delegate?.placePickerDidSelectPlace(place: place)
