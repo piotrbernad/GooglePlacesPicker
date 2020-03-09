@@ -24,18 +24,18 @@ public class Geocoder {
         self.apiKey = googleMapsKey
     }
     
-    public func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping (ReverseGeocodeResponse?, Error?) -> ()) {
+    public func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping (ReverseGeocodeResponse?, Error?) -> ()) {
         
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
         components?.queryItems = [URLQueryItem(name: "latlng", value: "\(coordinate.latitude),\(coordinate.longitude)"),
                                   URLQueryItem(name: "key", value: apiKey)]
         
         guard let url = components?.url else {
-            completion(nil, GeocoderError.couldNotBuildRequest)
+            completionHandler(nil, GeocoderError.couldNotBuildRequest)
             return
         }
         
-        perfromGeocodeRequest(url: url, completion: completion)
+        perfromGeocodeRequest(url: url, completion: completionHandler)
         
     }
     

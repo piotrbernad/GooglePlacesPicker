@@ -123,7 +123,7 @@
 		24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListObjectType.swift; sourceTree = "<group>"; };
 		24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListRenderer.swift; sourceTree = "<group>"; };
 		24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRenderer.swift; sourceTree = "<group>"; };
-		24BC235222D2161400AE02B9 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		24BC235222D2161400AE02B9 /* Geocoder.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; tabWidth = 4; };
 		24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodeResponse.swift; sourceTree = "<group>"; };
 		24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
