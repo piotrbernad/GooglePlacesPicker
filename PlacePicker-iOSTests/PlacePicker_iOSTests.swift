@@ -14,8 +14,15 @@ import XCTest
 
 class PlacePicker_iOSTests: XCTestCase {
 
+    let renderer_mock = PlacesListRenderer_Mock()
+    let geocoder_mock = GMSGeocoder_Mock()
+    var dataSource_mock: PlacesDataSource!
+    var tableView: UITableView!
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.dataSource_mock = PlacesDataSource(renderer: renderer_mock, geocoder: geocoder_mock)
+        self.tableView = UITableView()
+        dataSource_mock.tableView = tableView
+    }
     }
 class TestError: Error {}
 
