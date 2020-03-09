@@ -6,6 +6,9 @@
 //  Copyright © 2019 Piotr Bernad. All rights reserved.
 //
 
+import CoreLocation
+import GooglePlaces
+import GoogleMaps
 import XCTest
 @testable import PlacePicker
 
