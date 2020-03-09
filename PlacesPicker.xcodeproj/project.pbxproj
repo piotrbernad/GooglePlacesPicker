@@ -40,6 +40,10 @@
 		24BC235422D2187700AE02B9 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC235222D2161400AE02B9 /* Geocoder.swift */; };
 		24BC235622D22D3200AE02B9 /* ReverseGeocodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */; };
 		24BC2BFC22CF739B00467F56 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */; };
+		284322BD2416DB5400315566 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877422CE6C4200F17A44 /* GoogleMaps.framework */; };
+		284322BE2416DB5400315566 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877822CE6C4200F17A44 /* GoogleMapsBase.framework */; };
+		284322BF2416DB5400315566 /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877522CE6C4200F17A44 /* GoogleMapsCore.framework */; };
+		284322C02416DB5400315566 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2465877622CE6C4200F17A44 /* GooglePlaces.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +94,7 @@
 /* Begin PBXFileReference section */
 		242FBBFE22CCC01C001C6789 /* PlacesPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacesPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		242FBC0122CCC01C001C6789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		242FBC0322CCC01C001C6789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		242FBC0322CCC01C001C6789 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		242FBC0622CCC01C001C6789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		242FBC0822CCC01E001C6789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		242FBC0B22CCC01E001C6789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +110,7 @@
 		2465878622CE6DEF00F17A44 /* PlacePicker_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlacePicker_iOS.h; sourceTree = "<group>"; };
 		2465878722CE6DEF00F17A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2465878C22CE6DEF00F17A44 /* PlacePicker-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlacePicker-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2465879322CE6DEF00F17A44 /* PlacePicker_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePicker_iOSTests.swift; sourceTree = "<group>"; };
+		2465879322CE6DEF00F17A44 /* PlacePicker_iOSTests.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PlacePicker_iOSTests.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2465879522CE6DEF00F17A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		246587A222CE6E1100F17A44 /* PlacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePicker.swift; sourceTree = "<group>"; };
 		246587A822CF490B00F17A44 /* PlacePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2465878D22CE6DEF00F17A44 /* PlacePicker.framework in Frameworks */,
+				284322BD2416DB5400315566 /* GoogleMaps.framework in Frameworks */,
+				284322BE2416DB5400315566 /* GoogleMapsBase.framework in Frameworks */,
+				284322BF2416DB5400315566 /* GoogleMapsCore.framework in Frameworks */,
+				284322C02416DB5400315566 /* GooglePlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +694,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.piotrbernad.placepicker.PlacesPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.go-bro.appp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -709,7 +717,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.piotrbernad.placepicker.PlacesPicker;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.go-bro.appp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -831,6 +839,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "PlacePicker-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -851,6 +863,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6WRHQXQE9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "PlacePicker-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
