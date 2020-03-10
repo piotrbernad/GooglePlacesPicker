@@ -128,7 +128,7 @@ public extension PlacePickerController {
     static func controler(config: PlacePickerConfig) -> PlacePickerController {
         let controller = PlacePickerController()
         controller.config = config
-        controller.placesDataSource = PlacesDataSource(renderer: config.listRenderer)
+        controller.placesDataSource = PlacesDataSource(renderer: config.listRenderer, geocoder: GMSGeocoder())
         controller.placesDataSource.delegate = controller
         return controller
     }

@@ -35,7 +35,7 @@ class PlacesDataSource: NSObject {
     
     private var sessionToken: GMSAutocompleteSessionToken!
     
-    init(renderer: PlacesListRenderer, geocoder: GeocoderProtocol = Geocoder(), placesClient: GMSPlacesClient = GMSPlacesClient.shared()) {
+    init(renderer: PlacesListRenderer, geocoder: GeocoderProtocol, placesClient: GMSPlacesClient = GMSPlacesClient.shared()) {
         self.geocoder = geocoder
         self.placesClient = placesClient
         self.renderer = renderer
