@@ -84,26 +84,6 @@ class PlacesDataSource: NSObject {
             self?.state = ListState.adresses(objects: response?.results ?? [])
         }
     }
-    
-    private func fetchSublistOrSelectPlace(index: Int) {
-        switch state {
-        case .adresses(let objects):
-            guard objects.count > index else { return }
-            fetchDetailsFor(address: objects[index])
-        case .singlePlace(let place):
-            delegate?.placePickerDidSelectPlace(place: place)
-        default:
-            return
-        }
-    }
-    
-    private func fetchDetailsFor(address: ReverseGeocodeResult) {
-        fetchPlaceDetails(placeId: address.placeId)
-    }
- 
-    private func fetchDetailsFor(prediction: GMSAutocompletePrediction) {
-        fetchDetailsFromGooglePlaces(placeId: prediction.placeID)
-    }
 }
 
 extension PlacesDataSource: UITableViewDataSource {
