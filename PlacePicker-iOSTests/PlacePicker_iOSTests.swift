@@ -85,7 +85,7 @@ class PlacePicker_iOSTests: XCTestCase {
             XCTAssert(rows > 0)
             if rows > 0 {
                 let cell = dataSource.tableView(dataSource.tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as! TestCell
-                XCTAssert(cell.state.isPlace || cell.state.isAddress)
+                XCTAssert(cell.state.isAddress)
             }
         } else {
             XCTFail("Delay interrupted")
@@ -103,7 +103,7 @@ class PlacePicker_iOSTests: XCTestCase {
             XCTAssert(rows > 0)
             if rows > 0 {
                 let cell = dataSource.tableView(dataSource.tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as! TestCell
-                XCTAssert(cell.state.isPlace || cell.state.isAddress)
+                XCTAssert(cell.state.isAddress)
             }
         } else {
             XCTFail("Delay interrupted")
@@ -204,13 +204,6 @@ extension CLLocationCoordinate2D {
 }
 
 extension PlacesListObjectType {
-
-    var isPlace: Bool {
-        if case .place = self {
-            return true
-        }
-        return false
-    }
 
     var isAddress: Bool {
         if case .address = self {
