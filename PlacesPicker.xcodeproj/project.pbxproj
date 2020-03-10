@@ -234,20 +234,8 @@
 		2465877E22CE6D0F00F17A44 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				246587A222CE6E1100F17A44 /* PlacePicker.swift */,
-				246587A822CF490B00F17A44 /* PlacePickerView.swift */,
-				246587AA22CF499800F17A44 /* PlacePickerController.swift */,
-				24BC234622D1F1F700AE02B9 /* PlacesPickerDelegate.swift */,
-				246587AC22CF49BB00F17A44 /* PlacePickerConfig.swift */,
-				24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */,
-				24BC234A22D1F2F100AE02B9 /* ListState.swift */,
-				24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */,
-				24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */,
-				24BC234822D1F2B400AE02B9 /* PlacesError.swift */,
-				24BC234422D1C41900AE02B9 /* DefaultPlacesListRenderer.swift */,
-				24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */,
-				24BC235222D2161400AE02B9 /* Geocoder.swift */,
-				24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */,
+				62230B49241784C50029FC30 /* PublicAPI */,
+				62230B48241784BB0029FC30 /* Internal */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,6 +256,34 @@
 				2465879522CE6DEF00F17A44 /* Info.plist */,
 			);
 			path = "PlacePicker-iOSTests";
+			sourceTree = "<group>";
+		};
+		62230B48241784BB0029FC30 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				24BC235522D22D3200AE02B9 /* ReverseGeocodeResponse.swift */,
+				24BC235222D2161400AE02B9 /* Geocoder.swift */,
+				24BC234422D1C41900AE02B9 /* DefaultPlacesListRenderer.swift */,
+				24BC234822D1F2B400AE02B9 /* PlacesError.swift */,
+				24BC234E22D1F49000AE02B9 /* PlacesListRenderer.swift */,
+				24BC234C22D1F30E00AE02B9 /* PlacesListObjectType.swift */,
+				24BC2BFB22CF739B00467F56 /* PlacesDataSource.swift */,
+				24BC234A22D1F2F100AE02B9 /* ListState.swift */,
+				246587AA22CF499800F17A44 /* PlacePickerController.swift */,
+				246587A822CF490B00F17A44 /* PlacePickerView.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		62230B49241784C50029FC30 /* PublicAPI */ = {
+			isa = PBXGroup;
+			children = (
+				246587AC22CF49BB00F17A44 /* PlacePickerConfig.swift */,
+				24BC235022D1FE5E00AE02B9 /* PickerRenderer.swift */,
+				246587A222CE6E1100F17A44 /* PlacePicker.swift */,
+				24BC234622D1F1F700AE02B9 /* PlacesPickerDelegate.swift */,
+			);
+			path = PublicAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
