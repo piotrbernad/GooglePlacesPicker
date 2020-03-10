@@ -142,7 +142,7 @@ struct PlacesListRenderer_Mock: PlacesListRenderer {
 class PlacesDataSourceDelegate_Mock: PlacesDataSourceDelegate {
     var flag: Bool = false
     
-    func placePickerDidSelectPlace(place: GMSPlace) {
+    func placePickerDidSelectPlace(place: AddressResult) {
         flag = true
     }
     
