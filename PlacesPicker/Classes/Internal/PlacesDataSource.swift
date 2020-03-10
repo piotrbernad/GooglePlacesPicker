@@ -45,7 +45,10 @@ class PlacesDataSource: NSObject {
     
     func fetchPlacesFor(coordinate: CLLocationCoordinate2D, bounds: GMSCoordinateBounds?) {
         self.state = .loading
-        reverseGecodeLocation(coordinate: coordinate)
+        reverseGecodeLocation(coordinate: coordinate) { adresses, error in
+            guard error == nil else { return self.state = .error(error: error!) }
+            self.state = .addresses(objects: adresses)
+        }
     }
     
     func fetchPlaceDetails(placeId: String) {
@@ -73,15 +76,10 @@ class PlacesDataSource: NSObject {
         }
     }
     
-    private func reverseGecodeLocation(coordinate: CLLocationCoordinate2D) {
-        
-        geocoder.reverseGeocodeCoordinate(coordinate) { [weak self] (response, error) in
-            if let error = error {
-                self?.state = .error(error: error)
-                return
-            }
-            
-            self?.state = ListState.adresses(objects: response?.results ?? [])
+    private func reverseGecodeLocation(coordinate: CLLocationCoordinate2D, completion: @escaping (_ adresses: [AddressResult], _ error: Error?) -> ()) {
+        geocoder.reverseGeocodeCoordinate(coordinate) { (response, error) in
+            guard let addresses = response?.results() else { return completion([], error) }
+            completion(Array(addresses), nil)
         }
     }
 }
