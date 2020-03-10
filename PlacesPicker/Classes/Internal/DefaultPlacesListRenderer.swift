@@ -21,7 +21,7 @@ public class DefaultPlacesListRenderer: PlacesListRenderer {
         
         switch object {
         case .address(let address):
-            cell.textLabel?.text = address.formattedAddress
+            cell.textLabel?.text = address.addressAndName
             cell.accessoryType = .disclosureIndicator
             return cell
         case .error(let error):
