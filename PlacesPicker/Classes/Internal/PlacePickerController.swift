@@ -95,7 +95,7 @@ public class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
         pickerView.mapView.animate(to: position)
     }
     
-    internal func placePickerDidSelectPlace(place: GMSPlace) {
+    internal func placePickerDidSelectPlace(place: AddressResult) {
         delegate?.placePickerController(controller: self, didSelectPlace: place)
     }
     

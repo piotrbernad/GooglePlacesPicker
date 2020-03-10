@@ -10,6 +10,6 @@ import Foundation
 import GooglePlaces
 
 public protocol PlacesPickerDelegate: class {
-    func placePickerController(controller: PlacePickerController, didSelectPlace place: GMSPlace)
+    func placePickerController(controller: PlacePickerController, didSelectPlace place: AddressResult)
     func placePickerControllerDidCancel(controller: PlacePickerController)
 }

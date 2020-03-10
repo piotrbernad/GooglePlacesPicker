@@ -12,7 +12,7 @@ import GooglePlaces
 import GoogleMaps
 
 protocol PlacesDataSourceDelegate: class {
-    func placePickerDidSelectPlace(place: GMSPlace)
+    func placePickerDidSelectPlace(place: AddressResult)
     func autoCompleteControllerDidProvide(place: GMSPlace)
 }
 
