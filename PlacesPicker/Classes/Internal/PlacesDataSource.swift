@@ -57,7 +57,9 @@ class PlacesDataSource: NSObject {
     }
     
     func didSelectListItemAt(index: Int) {
-        fetchSublistOrSelectPlace(index: index)
+        if case let .addresses(objects) = state, objects.count > 0 {
+            delegate?.placePickerDidSelectPlace(place: objects[index])
+        }
     }
     
     private func fetchDetailsFromGooglePlaces(placeId: String) {
