@@ -200,6 +200,26 @@ class GMSPlace_Mock: GMSPlace {
 
 }
 
+class SuccessResponse: GMSReverseGeocodeResponse {
+    override func firstResult() -> GMSAddress? {
+        return GMSAddress_Mock(coordinates: .Prague)
+    }
+    
+    override func results() -> [GMSAddress]? {
+        return [GMSAddress_Mock(coordinates: .Prague), GMSAddress_Mock(coordinates: .Bratislava)]
+    }
+}
+
+class EmptyResponse: GMSReverseGeocodeResponse {
+    override func firstResult() -> GMSAddress? {
+        return nil
+    }
+    
+    override func results() -> [GMSAddress]? {
+        return []
+    }
+}
+
 extension CLLocationCoordinate2D: Equatable {}
 
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
