@@ -75,7 +75,7 @@ class PlacePicker_iOSTests: XCTestCase {
     // MARK: tests using real geocoder
     func testFetchPlacesFor() {
         let location = CLLocationCoordinate2D(latitude: 50.0706333725773, longitude: 50.0706333725773)
-        let dataSource = PlacesDataSource(renderer: renderer_mock)
+        let dataSource = PlacesDataSource(renderer: renderer_mock, geocoder: GMSGeocoder())
         dataSource.tableView = tableView
         dataSource.fetchPlacesFor(coordinate: location, bounds: nil)
         let exp = expectation(description: "Test after 5 seconds")
@@ -93,7 +93,7 @@ class PlacePicker_iOSTests: XCTestCase {
     }
 
     func testfetchPlaceDetails() {
-        let dataSource = PlacesDataSource(renderer: renderer_mock)
+        let dataSource = PlacesDataSource(renderer: renderer_mock, geocoder: GMSGeocoder())
         dataSource.tableView = tableView
         dataSource.fetchPlaceDetails(placeId: .PragueNationalMuseum)
         let exp = expectation(description: "Test after 5 seconds")
