@@ -17,7 +17,7 @@ protocol PlacesDataSourceDelegate: class {
 }
 
 protocol GeocoderProtocol {
-    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping (ReverseGeocodeResponse?, Error?) -> ())
+    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping GMSReverseGeocodeCallback)
 }
 
 class PlacesDataSource: NSObject {
@@ -132,4 +132,4 @@ extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
     }
 }
 
-extension Geocoder: GeocoderProtocol {}
+extension GMSGeocoder: GeocoderProtocol {}
