@@ -114,13 +114,12 @@ class PlacePicker_iOSTests: XCTestCase {
 class TestError: Error {}
 
 struct GMSGeocoder_Mock: GeocoderProtocol {
-    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping (ReverseGeocodeResponse?, Error?) -> ()) {
+    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping GMSReverseGeocodeCallback) {
         switch coordinate {
         case .Prague:
-            let response = ReverseGeocodeResponse(results: [ReverseGeocodeResult(formattedAddress: "Some address", placeId: "Some id"), ReverseGeocodeResult(formattedAddress: "Some other address", placeId: "Some id")])
-            return completionHandler(response, nil)
+            return completionHandler(SuccessResponse(), nil)
         case .Bratislava:
-            return completionHandler(ReverseGeocodeResponse(results: []), nil)
+            return completionHandler(EmptyResponse(), nil)
         default:
             return completionHandler(nil, TestError())
         }
