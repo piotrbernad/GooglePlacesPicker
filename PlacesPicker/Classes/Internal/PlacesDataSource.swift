@@ -66,7 +66,7 @@ class PlacesDataSource: NSObject {
             }
             
             if let place = place {
-                self?.state = .singlePlace(place: place)
+                self?.state = .addresses(objects: [place])
                 self?.tableView?.reloadData()
             }
             
@@ -90,9 +90,9 @@ extension PlacesDataSource: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch state {
-        case .adresses(let objects):
+        case .addresses(let objects):
             return objects.count
-        case .singlePlace, .loading, .error, .nothingSelected:
+        case .loading, .error, .nothingSelected:
             return 1
         }
     }
@@ -101,7 +101,7 @@ extension PlacesDataSource: UITableViewDataSource {
         
         
         switch state {
-        case .adresses(let objects):
+        case .addresses(let objects):
             let address = objects[indexPath.row]
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .address(address: address))
         case .error(let error):
@@ -110,15 +110,13 @@ extension PlacesDataSource: UITableViewDataSource {
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .nothingSelected)
         case .loading:
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .loading)
-        case .singlePlace(let place):
-            return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .place(place: place))
         }
     }
 }
 
 extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        self.state = .singlePlace(place: place)
+        self.state = .addresses(objects: [place])
         
         viewController.dismiss(animated: true, completion: { [weak self] in
             self?.delegate?.autoCompleteControllerDidProvide(place: place)
