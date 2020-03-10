@@ -13,7 +13,6 @@ import GoogleMaps
 public enum ListState {
     case nothingSelected
     case loading
-    case singlePlace(place: GMSPlace)
     case error(error: Error)
-    case adresses(objects: [ReverseGeocodeResult])
+    case addresses(objects: [AddressResult])
 }

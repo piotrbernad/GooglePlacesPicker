@@ -13,7 +13,6 @@ import GooglePlaces
 public enum PlacesListObjectType {
     case loading
     case nothingSelected
-    case place(place: GMSPlace)
     case error(error: Error)
-    case address(address: ReverseGeocodeResult)
+    case address(address: AddressResult)
 }

@@ -36,10 +36,6 @@ public class DefaultPlacesListRenderer: PlacesListRenderer {
             cell.textLabel?.text = NSLocalizedString("Please select location on the map or use search.", comment: "")
             cell.accessoryType = .none
             return cell
-        case .place(let place):
-            cell.textLabel?.text = [place.name, place.formattedAddress].compactMap { $0 }.joined(separator: ", ")
-            cell.accessoryType = .none
-            return cell
         }
     }
     
