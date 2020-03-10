@@ -161,6 +161,19 @@ class GMSPlacesClient_Mock: GMSPlacesClient {
     }
 }
 
+class GMSAddress_Mock: GMSAddress {
+    let _coordinates: CLLocationCoordinate2D
+    
+    init (coordinates: CLLocationCoordinate2D) {
+        self._coordinates = coordinates
+        super.init()
+    }
+    
+    override var coordinate: CLLocationCoordinate2D {
+        return _coordinates
+    }
+}
+
 class GMSPlace_Mock: GMSPlace {
 
     let _name: String
