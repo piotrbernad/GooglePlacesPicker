@@ -95,7 +95,7 @@ public class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
         pickerView.mapView.animate(to: position)
     }
     
-    internal func placePickerDidSelectPlace(place: GMSPlace) {
+    internal func placePickerDidSelectPlace(place: AddressResult) {
         delegate?.placePickerController(controller: self, didSelectPlace: place)
     }
     
@@ -128,7 +128,7 @@ public extension PlacePickerController {
     static func controler(config: PlacePickerConfig) -> PlacePickerController {
         let controller = PlacePickerController()
         controller.config = config
-        controller.placesDataSource = PlacesDataSource(renderer: config.listRenderer)
+        controller.placesDataSource = PlacesDataSource(renderer: config.listRenderer, geocoder: GMSGeocoder())
         controller.placesDataSource.delegate = controller
         return controller
     }

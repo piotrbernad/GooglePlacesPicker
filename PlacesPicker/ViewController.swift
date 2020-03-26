@@ -31,7 +31,7 @@ extension ViewController: PlacesPickerDelegate {
         controller.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func placePickerController(controller: PlacePickerController, didSelectPlace place: GMSPlace) {
+    func placePickerController(controller: PlacePickerController, didSelectPlace place: AddressResult) {
         controller.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ListState.swift
+//  PlacesListObjectType.swift
 //  PlacePicker-iOS
 //
 //  Created by Piotr Bernad on 07/07/2019.
@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import GooglePlaces
 import GoogleMaps
+import GooglePlaces
 
-public enum ListState {
-    case nothingSelected
+public enum PlacesListObjectType {
     case loading
-    case singlePlace(place: GMSPlace)
+    case nothingSelected
     case error(error: Error)
-    case adresses(objects: [ReverseGeocodeResult])
+    case address(address: AddressResult)
 }

@@ -21,7 +21,7 @@ public class DefaultPlacesListRenderer: PlacesListRenderer {
         
         switch object {
         case .address(let address):
-            cell.textLabel?.text = address.formattedAddress
+            cell.textLabel?.text = address.addressAndName
             cell.accessoryType = .disclosureIndicator
             return cell
         case .error(let error):
@@ -34,10 +34,6 @@ public class DefaultPlacesListRenderer: PlacesListRenderer {
             return cell
         case .nothingSelected:
             cell.textLabel?.text = NSLocalizedString("Please select location on the map or use search.", comment: "")
-            cell.accessoryType = .none
-            return cell
-        case .place(let place):
-            cell.textLabel?.text = [place.name, place.formattedAddress].compactMap { $0 }.joined(separator: ", ")
             cell.accessoryType = .none
             return cell
         }

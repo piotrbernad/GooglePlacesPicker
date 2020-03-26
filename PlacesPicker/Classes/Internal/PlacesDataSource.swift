@@ -12,16 +12,20 @@ import GooglePlaces
 import GoogleMaps
 
 protocol PlacesDataSourceDelegate: class {
-    func placePickerDidSelectPlace(place: GMSPlace)
+    func placePickerDidSelectPlace(place: AddressResult)
     func autoCompleteControllerDidProvide(place: GMSPlace)
+}
+
+protocol GeocoderProtocol {
+    func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D, completionHandler: @escaping GMSReverseGeocodeCallback)
 }
 
 class PlacesDataSource: NSObject {
     weak var tableView: UITableView?
     weak var delegate: PlacesDataSourceDelegate?
     
-    private let geocoder = GMSGeocoder()
-    private let ggeocoder = Geocoder()
+    private let geocoder: GeocoderProtocol
+    private let placesClient: GMSPlacesClient
     private let renderer: PlacesListRenderer
     private var state = ListState.nothingSelected {
         didSet {
@@ -31,7 +35,9 @@ class PlacesDataSource: NSObject {
     
     private var sessionToken: GMSAutocompleteSessionToken!
     
-    init(renderer: PlacesListRenderer) {
+    init(renderer: PlacesListRenderer, geocoder: GeocoderProtocol, placesClient: GMSPlacesClient = GMSPlacesClient.shared()) {
+        self.geocoder = geocoder
+        self.placesClient = placesClient
         self.renderer = renderer
         self.sessionToken = GMSAutocompleteSessionToken()
         super.init()
@@ -39,7 +45,10 @@ class PlacesDataSource: NSObject {
     
     func fetchPlacesFor(coordinate: CLLocationCoordinate2D, bounds: GMSCoordinateBounds?) {
         self.state = .loading
-        reverseGecodeLocation(coordinate: coordinate)
+        reverseGecodeLocation(coordinate: coordinate) { adresses, error in
+            guard error == nil else { return self.state = .error(error: error!) }
+            self.state = .addresses(objects: adresses)
+        }
     }
     
     func fetchPlaceDetails(placeId: String) {
@@ -48,11 +57,13 @@ class PlacesDataSource: NSObject {
     }
     
     func didSelectListItemAt(index: Int) {
-        fetchSublistOrSelectPlace(index: index)
+        if case let .addresses(objects) = state, objects.count > 0 {
+            delegate?.placePickerDidSelectPlace(place: objects[index])
+        }
     }
     
     private func fetchDetailsFromGooglePlaces(placeId: String) {
-        GMSPlacesClient.shared().lookUpPlaceID(placeId) { [weak self] (place, error) in
+        placesClient.lookUpPlaceID(placeId) { [weak self] (place, error) in
             if let error = error {
                 self?.state = .error(error: error)
                 self?.tableView?.reloadData()
@@ -60,42 +71,18 @@ class PlacesDataSource: NSObject {
             }
             
             if let place = place {
-                self?.state = .singlePlace(place: place)
+                self?.state = .addresses(objects: [place])
                 self?.tableView?.reloadData()
             }
             
         }
     }
     
-    private func reverseGecodeLocation(coordinate: CLLocationCoordinate2D) {
-        
-        ggeocoder.reverseGeocode(coordinate: coordinate) { [weak self] (response, error) in
-            if let error = error {
-                self?.state = .error(error: error)
-                return
-            }
-            
-            self?.state = ListState.adresses(objects: response?.results ?? [])
+    private func reverseGecodeLocation(coordinate: CLLocationCoordinate2D, completion: @escaping (_ adresses: [AddressResult], _ error: Error?) -> ()) {
+        geocoder.reverseGeocodeCoordinate(coordinate) { (response, error) in
+            guard let addresses = response?.results() else { return completion([], error) }
+            completion(Array(addresses), nil)
         }
-    }
-    
-    private func fetchSublistOrSelectPlace(index: Int) {
-        switch state {
-        case .adresses(let objects):
-            fetchDetailsFor(address: objects[index])
-        case .singlePlace(let place):
-            delegate?.placePickerDidSelectPlace(place: place)
-        default:
-            return
-        }
-    }
-    
-    private func fetchDetailsFor(address: ReverseGeocodeResult) {
-        fetchPlaceDetails(placeId: address.placeId)
-    }
- 
-    private func fetchDetailsFor(prediction: GMSAutocompletePrediction) {
-        fetchDetailsFromGooglePlaces(placeId: prediction.placeID)
     }
 }
 
@@ -103,9 +90,9 @@ extension PlacesDataSource: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch state {
-        case .adresses(let objects):
+        case .addresses(let objects):
             return objects.count
-        case .singlePlace, .loading, .error, .nothingSelected:
+        case .loading, .error, .nothingSelected:
             return 1
         }
     }
@@ -114,7 +101,7 @@ extension PlacesDataSource: UITableViewDataSource {
         
         
         switch state {
-        case .adresses(let objects):
+        case .addresses(let objects):
             let address = objects[indexPath.row]
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .address(address: address))
         case .error(let error):
@@ -123,15 +110,13 @@ extension PlacesDataSource: UITableViewDataSource {
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .nothingSelected)
         case .loading:
             return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .loading)
-        case .singlePlace(let place):
-            return renderer.cellForRowAt(indexPath: indexPath, tableView: tableView, object: .place(place: place))
         }
     }
 }
 
 extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        self.state = .singlePlace(place: place)
+        self.state = .addresses(objects: [place])
         
         viewController.dismiss(animated: true, completion: { [weak self] in
             self?.delegate?.autoCompleteControllerDidProvide(place: place)
@@ -146,3 +131,5 @@ extension PlacesDataSource: GMSAutocompleteViewControllerDelegate {
         viewController.dismiss(animated: true, completion: nil)
     }
 }
+
+extension GMSGeocoder: GeocoderProtocol {}
